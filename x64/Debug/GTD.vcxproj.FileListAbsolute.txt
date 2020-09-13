@@ -1,0 +1,2 @@
+C:\Users\dunn0\Desktop\GTD_C\x64\Debug\GTD.exe
+C:\Users\dunn0\Desktop\GTD_C\x64\Debug\GTD.pdb

@@ -1,6 +1,5 @@
 ﻿  Game.cpp
-C:\Users\Kevin\Desktop\GTD_CS\GTD\Game.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Level.cpp
   main.cpp
-C:\Users\Kevin\Desktop\GTD_CS\GTD\Game.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Generating Code...
-  GTD.vcxproj -> C:\Users\Kevin\Desktop\GTD_CS\GTD\x64\Debug\GTD.exe
+  GTD.vcxproj -> C:\Users\dunn0\Desktop\GTD_C\x64\Debug\GTD.exe

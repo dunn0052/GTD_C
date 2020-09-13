@@ -1,16 +1,8 @@
-#ifndef Game_h
-#define Game_h
-
-#define SDL_MAIN_HANDLED
-
-#include "SDL.h"
-#include "SDL_image.h"
-#include <stdio.h>
-#include <iostream>
-
-#include "Colors.h""
-
 #pragma once
+
+#include "SDL_common.h"
+#include "Colors.h"
+
 class Game
 {
 public:
@@ -30,9 +22,6 @@ private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 };
-
-#endif /* Game_hpp */
-
 
 
 
