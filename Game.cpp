@@ -1,5 +1,15 @@
 #pragma once
 #include "Game.h"
+#include "Constants.h"
+
+#pragma region Managers
+
+TextureManager* Game::textureManager = nullptr;
+Manager* manager;
+
+#pragma endregion
+
+#pragma region Constructor
 
 Game::Game()
 {
@@ -8,9 +18,14 @@ Game::Game()
 
 Game::~Game()
 {
-
+	Game::textureManager->~TextureManager();
 }
 
+#pragma endregion
+
+#pragma region Public
+
+/* SHould this be the constructor instead? */
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	int flags = 0;
@@ -28,10 +43,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			std::cout << "Window created!" << std::endl;
 
 		}
-		
+
 		if (renderer = SDL_CreateRenderer(window, -1, 0))
 		{
-			SDL_SetRenderDrawColor(renderer, WHITE);
+			SDL_SetRenderDrawColor(renderer, RED_OPAQUE);
+			textureManager = &TextureManager::TextureManager(renderer);
 			std::cout << "Renderer created!" << std::endl;
 		}
 
@@ -45,6 +61,26 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 }
 
+void Game::run()
+{
+	while (isRunning)
+	{
+		frameStart = SDL_GetTicks();
+
+		handleEvents();
+		update();
+		render();
+
+		frameTime = SDL_GetTicks() - frameStart;
+
+		if (frameDelay > frameTime)
+		{
+			SDL_Delay(frameDelay - frameTime);
+		}
+	}
+}
+
+
 void Game::handleEvents()
 {
 	SDL_Event event;
@@ -52,15 +88,15 @@ void Game::handleEvents()
 
 	switch (event.type)
 	{
-		case SDL_QUIT:
-		{
-			isRunning = false;
-			break;
-		}
-		default:
-		{
-			break;
-		}
+	case SDL_QUIT:
+	{
+		isRunning = false;
+		break;
+	}
+	default:
+	{
+		break;
+	}
 	}
 
 }
@@ -85,3 +121,6 @@ void Game::clean()
 	SDL_Quit();
 	std::cout << "Game cleaned!" << std::endl;
 }
+
+#pragma endregion
+

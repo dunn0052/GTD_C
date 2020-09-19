@@ -74,8 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\dunn0\Desktop\GTD_C\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;C:\Users\dunn0\Desktop\GTD_C\SDL2\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\dunn0\Desktop\GTD_C\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x64;C:\Users\dunn0\Desktop\GTD_C\SDL2\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;SDL2\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x64;SDL2\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -105,12 +105,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\dunn0\Desktop\GTD_C\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;C:\Users\dunn0\Desktop\GTD_C\SDL2\SDL2-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;SDL2\SDL2-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\dunn0\Desktop\GTD_C\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x64;C:\Users\dunn0\Desktop\GTD_C\SDL2\SDL2-2.0.12\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x64;SDL2\SDL2-2.0.12\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -160,12 +160,14 @@
     <ClCompile Include="PC.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteGroup.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Colors.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelTile.h" />
     <ClInclude Include="LevelTrigger.h" />
@@ -174,6 +176,8 @@
     <ClInclude Include="SDL_common.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteGroup.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
