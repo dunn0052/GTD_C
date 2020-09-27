@@ -1,9 +1,11 @@
 #pragma once
+#include <stdio.h>
 
 #include "SDL_common.h"
 #include "TextureManager.h"
 #include "Constants.h"
-#include "ECS.h"
+#include "LevelManager.h"
+#include "Level.h"
 
 class Game
 {
@@ -19,6 +21,7 @@ public:
 	void clean();
 
 	static TextureManager* textureManager;
+	static LevelManager* levelManager;
 
 private:
 	bool isRunning = false;
@@ -28,7 +31,9 @@ private:
 	static const int frameDelay = 1000 / FPS;
 	Uint32 frameStart = 0;
 	int frameTime = 0;
+	std::vector<Level> levels;
 };
+
 
 
 

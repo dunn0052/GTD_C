@@ -38,8 +38,7 @@ public:
 	virtual void update() {}
 	virtual void draw() {}
 
-	virtual ~Component() []
-};
+	virtual ~Component();
 
 class Entity
 {

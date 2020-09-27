@@ -1,2 +1,10 @@
-﻿  Game.cpp
+﻿  Component.cpp
+  Entity.cpp
+  Game.cpp
+  Level.cpp
+  LevelManager.cpp
+  main.cpp
+  PositionComponent.cpp
+  TextureManager.cpp
+  Generating Code...
   GTD.vcxproj -> C:\Users\Kevin\Desktop\GTD_CS\GTD_C\x64\Debug\GTD.exe

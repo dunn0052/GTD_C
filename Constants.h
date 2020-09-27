@@ -1,9 +1,21 @@
 #pragma once
 
-/* Colors */
+	/* Colors */
 #define WHITE_OPAQUE 255,255,255,255
 #define BLACK_OPAQUE 0,0,0,255
 #define RED_OPAQUE 255,0,0,255
+#define GREEN_OPAQUE 0,255,0,255
 
 /* Math */
 #define INVERSE_SQRT_2 0.70710678118
+
+enum COMPONENT_TYPE
+{
+	COMPONENT_UNREGISTERED,
+	COMPONENT_INIT,
+	COMPONENT_DRAW,
+	COMPONENT_UPDATE,
+	COMPONENT_LENGTH
+};
+
+const size_t maxComponents = COMPONENT_LENGTH - 1;

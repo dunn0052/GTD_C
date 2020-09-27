@@ -9,6 +9,7 @@ public:
     double x() const { return x_; }
     double y() const { return y_; }
     double magnitude() { return sqrt(pow(x_, 2.0) + pow(x_,2.0)); }
+    void set(float x, float y) { x_ = x, y_ = y; }
 
     Vector2& operator +=(const Vector2& rhs)
     {
@@ -55,7 +56,7 @@ static Vector2 operator - (const Vector2& lhs, const Vector2& rhs)
 template <typename Scalar>
 static Vector2 operator*(const Scalar& scalar, const Vector2& vect)
 {
-    return Vector(scalar * vect.x(), scalar * vect.y());
+    return Vector2(scalar * vect.x(), scalar * vect.y());
 }
 
 template <typename Scalar>
