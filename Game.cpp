@@ -7,6 +7,7 @@
 #pragma region Managers
 
 	TextureManager* Game::textureManager = nullptr;
+	LevelManager* Game::levelManager = nullptr;
 #pragma endregion
 
 #pragma region Constructor
@@ -19,6 +20,7 @@
 	Game::~Game()
 	{
 		Game::textureManager->~TextureManager();
+		Game::levelManager->~LevelManager();
 	}
 
 #pragma endregion
@@ -68,6 +70,9 @@
 			}
 
 			/* load levels here */
+			levelManager = &LevelManager::LevelManager();
+			Entity& e = levelManager->addEntity();
+			//levelManager->addComponent(*(new PositionComponent()), 0);
 
 			// Successful game setup
 			isRunning = true;

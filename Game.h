@@ -6,6 +6,7 @@
 #include "Constants.h"
 #include "LevelManager.h"
 #include "Level.h"
+#include "PositionComponent.h"
 
 class Game
 {

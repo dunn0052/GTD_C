@@ -165,6 +165,7 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelManager.h" />
+    <ClInclude Include="PositionComponent.h" />
     <ClInclude Include="SDL_common.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Vector2.h" />

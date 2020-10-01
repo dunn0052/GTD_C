@@ -36,22 +36,21 @@ void LevelManager::refresh()
 		std::end(entities));
 }
 
-template <typename T, typename... TAargs>
-T& LevelManager::addComponent(TAargs&&... mArgs, COMPONENT_TYPE type, size_t entID)
+template <typename C>
+void LevelManager::addComponent(C component, size_t entID)
 {
-	components[type].emplace_back(std::move(c(new T(std::forward<TAargs>(mArgs)...))));
-	T c = &components[type].back();
-	c->init();
+	/* component added directly instead of pointer to have contigious memeory */
+	components[component.getType()].push_back(component);
+	component.init();
 	/* Component ID is last index as it's placed on the end */
-	c->ID = components[type].size() - 1;
-	return c;
+	component.setID(components[component.getType()].size() - 1);
+	entities[entID]->addComponent(std::move(&component));
 }
 
 Entity& LevelManager::addEntity()
 {
 	Entity* e = new Entity();
-	std::unique_ptr<Entity> uPtr{ e };
-	entities.emplace_back(std::move(uPtr));
+	entities.emplace_back(std::move(e));
 	e->setID(entities.size() - 1);
 	return *e;
 }

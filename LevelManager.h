@@ -25,8 +25,8 @@ public:
 	/* Remove entities if not active */
 	void refresh();
 
-	template <typename T, typename... TAargs>
-	T& addComponent(TAargs&&... mArgs, COMPONENT_TYPE type, size_t endID);
+	template <typename C>
+	void addComponent(C component, size_t endID);
 
 	Entity& addEntity();
 

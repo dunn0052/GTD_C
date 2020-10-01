@@ -36,6 +36,7 @@ public:
 	virtual void deactivate() { isActive = false; }
 	virtual void activate() { isActive = true; }
 	virtual void setID(size_t ID) { _ID = ID; }
+	virtual COMPONENT_TYPE getType() { return type; }
 	/* final removal of component */
 	virtual ~Component() {}
 private:
